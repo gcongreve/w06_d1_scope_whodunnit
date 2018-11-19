@@ -153,31 +153,31 @@
 // #### Episode 7
 //
 // ```js
-let murderer = 'Professor Plum';
-
-const changeMurderer = function() {
-  murderer = 'Mr. Green';
-
-  const plotTwist = function() {
-    let murderer = 'Colonel Mustard';
-
-    const unexpectedOutcome = function() {
-      murderer = 'Miss Scarlet';
-    }
-
-    unexpectedOutcome();
-  }
-
-  plotTwist();
-}
-
-const declareMurderer = function() {
-  return `The murderer is ${murderer}.`;
-}
-
-changeMurderer();
-const verdict = declareMurderer();
-console.log(verdict);
+// let murderer = 'Professor Plum';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mr. Green';
+//
+//   const plotTwist = function() {
+//     let murderer = 'Colonel Mustard';
+//
+//     const unexpectedOutcome = function() {
+//       murderer = 'Miss Scarlet';
+//     }
+//
+//     unexpectedOutcome();
+//   }
+//
+//   plotTwist();
+// }
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
 
 //guess : Colonel Mustard - wrong
 //the changeMurderer function contains another 2 functions, the plotTwist function is called last and tries to declare the murderer as 'Col Mustard' using 'let', the murdrerer has already been set using a 'let' so this causes an error - this results in the murderer being set as 'Mr Green'
@@ -186,43 +186,43 @@ console.log(verdict);
 // #### Episode 8
 //
 // ```js
-const scenario = {
-  murderer: 'Mrs. Peacock',
-  room: 'Conservatory',
-  weapon: 'Lead Pipe'
-};
-
-const changeScenario = function() {
-  scenario.murderer = 'Mrs. Peacock';
-  scenario.room = 'Dining Room';
-
-  const plotTwist = function(room) {
-    if (scenario.room === room) {
-      scenario.murderer = 'Colonel Mustard';
-    }
-
-    const unexpectedOutcome = function(murderer) {
-      if (scenario.murderer === murderer) {
-        scenario.weapon = 'Candle Stick';
-      }
-    }
-
-    unexpectedOutcome('Colonel Mustard');
-  }
-
-  plotTwist('Dining Room');
-}
-
-const declareWeapon = function() {
-  return `The weapon is ${scenario.weapon}.`
-}
-
-changeScenario();
-const verdict = declareWeapon();
-console.log(verdict);
+// const scenario = {
+//   murderer: 'Mrs. Peacock',
+//   room: 'Conservatory',
+//   weapon: 'Lead Pipe'
+// };
+//
+// const changeScenario = function() {
+//   scenario.murderer = 'Mrs. Peacock';
+//   scenario.room = 'Dining Room';
+//
+//   const plotTwist = function(room) {
+//     if (scenario.room === room) {
+//       scenario.murderer = 'Colonel Mustard';
+//     }
+//
+//     const unexpectedOutcome = function(murderer) {
+//       if (scenario.murderer === murderer) {
+//         scenario.weapon = 'Candle Stick';
+//       }
+//     }
+//
+//     unexpectedOutcome('Colonel Mustard');
+//   }
+//
+//   plotTwist('Dining Room');
+// }
+//
+// const declareWeapon = function() {
+//   return `The weapon is ${scenario.weapon}.`
+// }
+//
+// changeScenario();
+// const verdict = declareWeapon();
+// console.log(verdict);
 
 //guess = candle stick.
-//The weapon is originally the lead pipe. The changeScenario function is called - changing the murderer to Peacock and thr room to 'Dining', this function also calls the plotTwist function, with an argument of 'Dining Room' - as the room has been changed to dining room the functions if statement is true which changes the murderer to 'Col Mustard', which means that the unexpectedOutcome('Colonel Mustard') functions conditions are met ("col mustard === murderer"), which changes the weapon to a 'Candle Stick'
+//The weapon is originally the lead pipe. The changeScenario function is called - changing the murderer to Peacock and thr room to 'Dining', this function also calls the plotTwist function, with an argument of 'Dining Room' - as the room has been changed to dining room the function's if statement is true which changes the murderer to 'Col Mustard', which means that the unexpectedOutcome('Colonel Mustard') functions conditions are met ("col mustard === murderer"), which changes the weapon to a 'Candle Stick'
 
 
 // ```
@@ -243,7 +243,7 @@ console.log(verdict);
 // const verdict = declareMurderer();
 // console.log(verdict);
 // guess = Professor Plum
-// The murderer is Plum which means that the if statement is true, which changes the murder to Peacock - this means that the if statement is no longer true, which means that murderer is no longer Mrs Peacock and Professor Plumb again.
+// The murderer is Plum which means that the if statement is true, which tries to change the murder to Peacock - However the murderer has already been set with a 'let' and trying to re-set it with another 'let' will lead to an error which makes the murderer Professor Plumb again.
 
 // ```
 //
